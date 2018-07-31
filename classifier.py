@@ -45,6 +45,7 @@ def plot_confusion_matrix(cm, classes,
 data = pd.read_csv("cleaned_data.csv")
 data = data.drop(["Unnamed: 0", "application_type", "zip_code", "addr_state", "earliest_cr_line",
                   "issue_d", "id"], axis=1)
+data.info(verbose=True, null_counts=True)
 
 # create one hot labels
 labels = pd.get_dummies(data=data["loan_status"])["Fully Paid"]

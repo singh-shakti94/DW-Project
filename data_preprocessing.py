@@ -12,6 +12,7 @@ raw_data = pd.read_csv("accepted_2007_to_2017.csv")
 # 1 - find out null values
 # raw_data.isnull().sum()
 raw_data.info(verbose=True, null_counts=True)
+raw_data.head()
 
 for i in raw_data.columns:
     if raw_data[i].isnull().sum() > (len(raw_data)/2):
@@ -35,6 +36,7 @@ print("We are now left with %d rows" % len(raw_data))
 
 # check for NANs one more time
 raw_data.info(verbose=True, null_counts=True)
+
 # remove columns with NANs and columns that we don't need for further analysis
 raw_data = raw_data.drop(["next_pymnt_d", "debt_settlement_flag", "disbursement_method", "hardship_flag",
                           "pymnt_plan", "title", ], axis=1)
