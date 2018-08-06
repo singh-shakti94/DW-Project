@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import itertools
 
-
+# confusion matrix  plot: source Matplotlib document
 def plot_confusion_matrix(cm, classes,
                           title='Confusion matrix',
                           cmap=plt.cm.Oranges):
